@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>1533 Scouting</title>
+</head>
+<body bgcolor= "#2B36FF">
+ 
+
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<link rel="manifest" href="manifest.json">
+	<link rel="manifest" href="offline.appcache">
+	<link rel="stylesheet" href="style.css">
+	
+	<title>Team 1533 Scouting App</title>
+	
+	<link rel="stylesheet" href="styles/mobile.css" 
+       media="only screen and (max-device-width: 480px)">
+	<!-- iOS Safari Web Clip config (add to springboard) -->
+		<meta name="apple-mobile-web-app-title" content="StrangeScout">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<link rel="apple-touch-icon" sizes="180x180" href="icon/icon-180px.png">
+		<link rel="apple-touch-icon" sizes="167x167" href="icon/icon-167px.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="icon/icon-152px.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="icon/icon-120px.png">
+		<!-- <meta name="apple-mobile-web-app-status-bar-style" content="black"> -->
+	<!-- end iOS config -->
+
+	<script language="javascript">
+		var webappCache = window.applicationCache;
+		function updateCache() {
+    		webappCache.swapCache();
+		}
+		webappCache.addEventListener("updateready", updateCache, false);
+	</script>
+
+<form action="submit-data.php" method="post" accept-charset="utf-8">
+<div id = "shell" class = "container-fluid">
+    
+	<h1>FIRST Power Up Scouting Form</h1>
+
+	
+	<br>
+	<br>
+	<br>
+
+<fieldset id="starting-numbers">
+  <fieldset>
+	<legend><h3>Numbers</h3></legend>
+      <p><span>
+        <label for="team-num">Team Number: </label>
+        <input type="text" name="teamNum" required>
+      </span>
+ 
+		  <span>
+	      <label for="match-num">Match Number: </label>
+		    <input type="text" name="matchNum" required>
+      	  </span>
+		</p>
+	</fieldset>
+	</fieldset>
+
+	<fieldset id="starting-pos">
+	<fieldset>	
+	<legend><h3>Starting Position</h3></legend>
+		<p>
+		<span>
+	    <input type="radio" name="startPos" value="red_1" id="red1">
+	    <label for="red1"> Red 1</label> 
+	    ---
+	    <label for="blue1">Blue 1 </label>
+	    <input type="radio" name="startPos" value="blue_1" id="blue1">
+      </span></p>
+
+	  <p>
+	  <span>
+	    <input type="radio" name="startPos" value="red_2" id="red2">
+	    <label for="red2"> Red 2</label> 
+	    ---
+	    <label for="blue2">Blue 2 </label>
+	    <input type="radio" name="startPos" value="blue_2" id="blue2">
+      </span>	  </p>
+	<p><span>	
+	  <input type="radio" name="startPos" value="red_3" id="red3">
+	  <label for="red3"> Red 3</label> 
+	  ---
+	  <label for="blue3">Blue 3 </label>
+	  <input type="radio" name="startPos" value="blue_3" id="blue3">
+	  </span></p>
+	</fieldset></fieldset>
+
+	<h2>Autonomous:</h2>
+
+	<fieldset id="automove">
+	<fieldset>
+		
+	<legend><h3>Autonomous Movement</h3></legend>
+		<input type="hidden" name="autoLine" value="false">
+		<label for="autoLine">Robot across Autonomous Movement Line: </label><input type="checkbox" name="autoLine" id="autoLine" value="true">
+	</fieldset>
+	</fieldset>
+
+	<fieldset id="auto-switch">
+	<fieldset>
+		
+	<legend><h3>Autonomous Switch Cubes</h3></legend>
+		Power Cubes on switch: <input type="number" name="autoSwitch" min="0" value="0">
+	</fieldset>
+	</fieldset>
+	
+	<fieldset id="auto-scale">
+	<fieldset>
+		
+	<legend><h3>Autonomous Scale Cubes</h3></legend>
+		Power Cubes on scale: <input type="number" name="autoScale" min="0" value="0">
+	</fieldset>
+	</fieldset>
+
+<h2>Teleop:</h2>
+
+	<fieldset id="tele-switch">
+	<fieldset>
+	<legend><h3>Switch Cubes</h3></legend>
+		Power Cubes on switch: <input type="number" name="teleSwitch" min="0" value="0">
+	</fieldset>
+	</fieldset>
+	
+	<fieldset id="tele-scale">
+	<fieldset>
+		
+	<legend><h3>Scale Cubes</h3></legend>
+		Power Cubes on scale: <input type="number" name="teleScale" min="0" value="0">
+	</fieldset>
+	</fieldset>
+	
+	<fieldset id="power-up">
+	<fieldset>
+	<legend><h3>Power Ups</h3></legend>
+		Power Cubes returned: <input type="number" name="returnCubes" min="0" value="0">
+		<span>
+			<input type="hidden" name="levitate" value="false">
+			<label for="levitate">Robot used levitate: </label><input type="checkbox" name="levitate" id="levitate" value="true">
+		</span>
+	</fieldset>
+	</fieldset>
+	
+	<fieldset id="cards">
+		<fieldset>
+			
+		<legend><h3>Cards</h3></legend>
+			<span>
+				Yellow Cards: <input type="number" name="yellowCards" min="0" value="0">
+			</span>
+			<span>
+				Red Cards: <input type="number" name="redCards" min="0" value="0">
+			</span>
+		</fieldset>
+	</fieldset>
+	<h2>End Game:</h2>
+
+	<fieldset>
+		Robot end position: <select name="endPos" id="endPos">
+			<option value="none">Neither</option>
+			<option value="park">Parked</option>
+			<option value="climb">Climbed</option>
+		</select>
+	</fieldset>
+
+	<fieldset>
+		<fieldset>
+		<legend><h3>Additional Notes</h3></legend>
+		<textarea name="notes" id="notes" cols="40" rows="5"></textarea>
+	</fieldset>
+	</fieldset>
+	
+  <input type="submit" value="Submit Data" >
+
+
+</div>
+</form>
+</body>
+</html>
